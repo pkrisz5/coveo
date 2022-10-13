@@ -1,6 +1,8 @@
-# Initialize a schema (database namespace)
+# Initialize a new schema (aka. database namespace)
 
-Make sure to set properly the shell variables:
+The new schema initialization involves four steps. a) the creation of the database namespace, b) the creation of users, c) the generation of table structure and d) initialization of constant table content. The following bash snippet helps with these steps.
+
+Make sure to set properly the shell script variables:
 * `SRV`: points to the database server address
 * `DB_NAME`: database name
 * `SCHEMA_NAME`: the name of the schame to be created
@@ -9,10 +11,9 @@ Make sure to set properly the shell variables:
 * `READER`: the name of the read only user (role) to be created
 * `READER_PW`: the password of the read only user to be set
 
-Database administrator credentials can be set via environment variables:
+Database administrator credentials, used in step a) and step b), can be set via environment variables:
 * `SECRET_USERNAME`: the name of the database administrator
 * `SECRET_PASSWORD`: the password of the database administrator
-
 
 ```bash
 SRV=postgres-kooplex-staging
