@@ -367,11 +367,11 @@ CREATE TABLE IF NOT EXISTS {schema}.ecdc_covid_country_weekly (
 
 @subcommand([
     argument("-S", "--schema", action="store", help="schema name", required=True),
-    argument("-L", "--load_tables", action="store_true", help="whether to create load tables", required=False),
+    argument("-L", "--load_tables", action="store", help="when creating load tables, this is the prefix", required=False),
 ])
 def create_tables(args):
     schema = args.schema
-    prefix = 'load_' if args.load_tables else ''
+    prefix = args.load_tables + '_' if args.load_tables else ''
     sql_common = f"""
 CREATE TABLE IF NOT EXISTS {schema}.runid (
     id                          SERIAL PRIMARY KEY,
