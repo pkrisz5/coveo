@@ -104,10 +104,11 @@ if __name__ == '__main__':
 
     counter = 0
     while True:
+        now = datetime.datetime.now()
         ti = T.next()
         if ti is None:
             T.close()
-            print ("{0} loop ends closed tarfile".format(datetime.datetime.now()))
+            print ("{0} loop ends closed tarfile".format(now))
             break
         if not ti.isfile():
             continue
@@ -116,7 +117,6 @@ if __name__ == '__main__':
             print ("{0} STRANGE file name {1} skipped".format(now, ti.name))
             continue
 
-        now = datetime.datetime.now()
         runid = the_map.get_id( extract_ena_run(ti.name) )
         if runid in uniq_before:
             print ("{0} DUPLICATE file name {1} -> ena_run {2} is not new".format(now, ti.name, runid))
