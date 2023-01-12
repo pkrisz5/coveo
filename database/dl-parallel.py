@@ -120,11 +120,6 @@ select r.ena_run
     conn.close()
 
     u = pandas.read_csv(args.input, sep = '\t')
-    u['annot_first'] = u['submitted_ftp'].apply(lambda x: 'annot' in x.split(';')[0])
-    u['md5_vcf'] = u[['annot_first', 'submitted_md5']].apply(lambda x: x[1].split(';')[int(x[0])], axis = 1)
-    u['md5_cov'] = u[['annot_first', 'submitted_md5']].apply(lambda x: x[1].split(';')[1-int(x[0])], axis = 1)
-    u['url_vcf'] = u[['annot_first', 'submitted_ftp']].apply(lambda x: x[1].split(';')[int(x[0])], axis = 1)
-    u['url_cov'] = u[['annot_first', 'submitted_ftp']].apply(lambda x: x[1].split(';')[1-int(x[0])], axis = 1)
 
     print ("{0} loaded file {1} # {2} samples".format(datetime.datetime.now(), args.input, u.shape[0]))
     E = threading.Event()
@@ -138,11 +133,12 @@ select r.ena_run
         t.start()
     tt = threading.Thread(target = worker_tar, args = (args.output, args.batch_size, Et, TAR))
     tt.start()
-    for i, r in u[['run_accession', 'md5_vcf', 'md5_cov', 'url_vcf', 'url_cov']].iterrows():
+    for i, r in u[['run_accession', 'submitted_ftp', 'submitted_md5']].iterrows():
         if r['run_accession'] in known:
             continue
-        Q.put_nowait((r['url_vcf'], r['md5_vcf']))
-        Q.put_nowait((r['url_cov'], r['md5_cov']))
+        for url, md5 in zip(r['submitted_ftp'].split(';'), r['submitted_md5'].split(';')):
+            if ('annot' in url) or ('coverage' in url):
+                Q.put_nowait((url, md5))
     print ("{0} thread block removal".format(datetime.datetime.now()))
     E.set()
     for t in threads:
