@@ -1,0 +1,258 @@
+id	iso_a3	iso_a2	country_name	country_name_local	population_2021
+4	ATA	AQ	Antarctica	Antarctica	
+9	AIA	AI	Anguilla	Anguilla	
+25	BLM	BL	Saint Barthélemy	Saint-Barthélemy	
+29	BES	BQ	Bonaire, Sint Eustatius and Saba	Bonaire, Sint Eustatius and Saba	
+34	BVT	BV	Bouvet Island	Bouvetoya	
+39	CPT	CP	Clipperton Island	Île Clipperton	
+44	CXR	CX	Christmas Island	Christmas Island	
+49	CCK	CC	Cocos (Keeling) Islands	Cocos Keeling Islands	
+59	SGS	GS	South Georgia and The South Sandwich Islands	South Georgia and The South Sandwich Islands	
+62	COK	CK	Cook Islands	Cook Islands-Kuki 'Airani	
+70	JEY	JE	Jersey	Jersey-Jersey	
+84	ESH	EH	Western Sahara	الصحراء الغربية	
+85	ERI	ER	Eritrea	إريتريا-Eritrea-ኤርትራ	
+96	FLK	FK	Falkland Islands	Falkland Islands	
+99	GGY	GG	Guernsey	Guernsey-Guernesey	
+105	HMD	HM	Heard Island and Mcdonald Islands	Heard Island and Mcdonald Islands	
+110	NIU	NU	Niue	Niue-Niue	
+126	IOT	IO	British Indian Ocean Territory	British Indian Ocean Territory	
+138	SPM	PM	Saint Pierre and Miquelon	Saint-Pierre-Et-Miquelon	
+139	PCN	PN	Pitcairn Islands	Pitcairn Islands-Pitkern Ailen	
+162	TKL	TK	Tokelau	Tokelau-Tokelau	
+167	NFK	NF	Norfolk Island	Norfolk Island-Norfuk Ailen	
+186	MSR	MS	Montserrat	Montserrat	
+200	UMI	UM	United States Minor Outlying Islands	United States Minor Outlying Islands	
+203	VAT	VA	Vatican City	Stato Della Citta Del Vaticano-Status Civitatis Vaticanae	
+209	SHN	SH	Saint Helena, Ascension and Tristan Da Cunha	Saint Helena, Ascension and Tristan Da Cunha	
+214	WLF	WF	Wallis and Futuna	Wallis-Et-Futuna	
+216	XA 	XA	Paracel Islands	Paracel Islands (Disputed Territory)	
+217	XB 	XB	Spratly Islands	Spratly Islands (Disputed Territory)	
+218	XC 	XC	Aksai Chin	Aksai Chin (Disputed Territory)	
+219	XD 	XD	Arunachal Pradesh	Arunashal Pradesh (Disputed Territory)	
+220	XE 	XE	China/India	China/India (Disputed Territory)	
+221	XF 	XF	Hala'Ib Triangle	Hala'Ib Triangle (Disputed Territory)	
+222	XG 	XG	Ilemi Triangle	Ilemi Triangle (Disputed Territory)	
+223	XH 	XH	Jammu Kashmir	Jammu Kashmir (Disputed Territory)	
+224	XI 	XI	Kuril Islands	Kuril Islands (Disputed Territory)	
+225	XL 	XL	Navassa Island	Navassa Island (Disputed Territory)	
+231	SJM	SJ	Svalbard and Jan Mayen	Svalbard Og Jan Mayen	
+246	ATF	TF	French Southern and Antarctic Lands	Terres Australes Et Antarctiques Françaises	
+249	XM 	XM	Scarborough Reef	Scarborough Reef (Disputed Territory)	
+250	XN 	XN	Senkaku Islands	Senkaku Islands (Disputed Territory)	
+251	XO 	XO	Bassas Da India	Fr Territory (Juan de Nova, Glorioso, Europa, Tromelin, Bassas Da India)	
+252	XU 	XU	Abyei	Abyei Region (Disputed Territory)	
+253	XV 	XV	Bir Tawil (Disputed Territory)	Bir Tawil (Disputed Territory)	
+1	ARG	AR	Argentina	Argentina	45808747
+2	ASM	AS	American Samoa	American Samoa-Samoa Amelika	55103
+3	AUT	AT	Austria	Österreich	8956279
+5	AND	AD	Andorra	Andorra	77354
+6	ARE	AE	United Arab Emirates	الإمارات العربية المتحدة	9991083
+7	AFG	AF	Afghanistan	افغانستان-افغانستان	39835428
+8	ATG	AG	Antigua and Barbuda	Antigua and Barbuda	98728
+10	ALB	AL	Albania	Shqipëria	2811666
+11	ARM	AM	Armenia	Հայաստան	2968128
+12	AGO	AO	Angola	Angola	33933611
+13	AUS	AU	Australia	Australia	25739256
+14	ABW	AW	Aruba	Aruba-Aruba	107195
+15	AZE	AZ	Azerbaijan	Azərbaycan	10145212
+16	BIH	BA	Bosnia and Herzegovina	Bosna I Hercegovina-Bosna I Hercegovina-Босна И Херцеговина	3263459
+17	BRB	BB	Barbados	Barbados	287708
+18	BGD	BD	Bangladesh	People’S Republic of Bangladesh	166303494
+19	BEL	BE	Belgium	Belgien-Belgique-België	11587882
+20	BFA	BF	Burkina Faso	Burkina Faso	21497097
+21	BGR	BG	Bulgaria	България	6899125
+22	BHR	BH	Bahrain	مملكة البحرين	1748295
+23	BDI	BI	Burundi	Burundi-Burundi	12255429
+24	BEN	BJ	Benin	Bénin	12451031
+26	BMU	BM	Bermuda	Bermuda	63867
+27	BRN	BN	Brunei	Brunei	441532
+28	BOL	BO	Bolivia	Wuliwya-Volívia-Bulivya-Bolivia	11832936
+30	BRA	BR	Brazil	Brasil	213993441
+31	CHN	CN	China	中國	1412360000
+32	BHS	BS	Bahamas	Bahamas	396914
+33	BTN	BT	Bhutan	Kingdom of Bhutan	779900
+35	BWA	BW	Botswana	Botswana-Botswana	2397240
+36	BLR	BY	Belarus	Беларусь	9340314
+37	BLZ	BZ	Belize	Belize	404915
+38	COL	CO	Colombia	Colombia	51265841
+40	CRI	CR	Costa Rica	Costa Rica	5139053
+41	CUB	CU	Cuba	Cuba	11317498
+42	CPV	CV	Cape Verde	Cabo Verde	561901
+43	CUW	CW	Curaçao	Curaçao	152369
+45	CYP	CY	Cyprus	Κύπρος-Kıbrıs	1215588
+46	CZE	CZ	Czechia	Česká Republika	10703446
+47	CMR	CM	Cameroon	Cameroon-Cameroun	27224262
+48	CAN	CA	Canada	Canada-Canada	38246108
+50	COD	CD	Democratic Republic of The Congo	République Démocratique du Congo-Kongo-Kongó-Kongu-Kongo	92377986
+51	CAF	CF	Central African Republic	République Centrafricaine-Ködörösese Tî Beafrîka	4919987
+52	COG	CG	Congo	Congo-Kongo-Kongó	5657017
+53	CHE	CH	Switzerland	Schweiz-Suisse-Svizzera-Svizra	8697723
+54	CIV	CI	Côte D’Ivoire	Côte D’Ivoire	27053629
+55	GRL	GL	Greenland	Gronland-Kalaallit Nunaat	56653
+56	GMB	GM	Gambia	Gambia	2486937
+57	GIN	GN	Guinea	Guinée	13497237
+58	GNQ	GQ	Equatorial Guinea	Guinée Équatoriale-Guinea Ecuatorial	1449891
+60	GTM	GT	Guatemala	Guatemala	17109746
+61	GUM	GU	Guam	Guahan-Guam	170184
+63	CHL	CL	Chile	Chile	19212362
+64	FRA	FR	France	France	67499343
+65	HRV	HR	Croatia	Hrvatska	3899000
+66	HTI	HT	Haiti	Haiti-Ayiti	11541683
+67	HUN	HU	Hungary	Magyarország	9709886
+68	ISL	IS	Iceland	Ísland	372295
+69	ITA	IT	Italy	Italia	59066225
+71	JAM	JM	Jamaica	Jamaica	2973462
+72	JOR	JO	Jordan	الأردن	10269022
+73	KEN	KE	Kenya	Kenya-Kenya	54985702
+74	KGZ	KG	Kyrgyzstan	Kırgızstan-Кыргызстан	6694200
+75	DEU	DE	Germany	Deutschland	83129285
+76	DJI	DJ	Djibouti	جيبوتي-Djibouti-Jabuuti	1002197
+77	DNK	DK	Denmark	Danmark	5856733
+78	DMA	DM	Dominica	Dominica-Dominique	72172
+79	DOM	DO	Dominican Republic	República Dominicana	10953714
+80	DZA	DZ	Algeria	الجزائر	44616626
+81	ECU	EC	Ecuador	Ikwadur-Ecuador	17888474
+82	EST	EE	Estonia	Eesti	1329254
+83	EGY	EG	Egypt	مصر	104258327
+86	GAB	GA	Gabon	Gabon	2278829
+87	GRD	GD	Grenada	Grenada	113015
+88	GEO	GE	Georgia	საქართველო	3708610
+89	HND	HN	Honduras	Honduras	10062994
+90	GRC	EL	Greece	Ελλάδα	10664568
+91	PRK	KP	North Korea	조선민주주의인민공화국	25887045
+92	ESP	ES	Spain	Espana	47326687
+93	ETH	ET	Ethiopia	Federal Democratic Republic of Ethiopia	117876226
+94	FIN	FI	Finland	Suomi-Finland	5541696
+95	FJI	FJ	Fiji	Fiji-Viti-फ़िजी	902899
+97	FSM	FM	Micronesia	Micronesia	116255
+98	FRO	FO	Faroes	Faroerne-Foroyar	49053
+100	GHA	GH	Ghana	Ghana	31732128
+101	GIB	GI	Gibraltar	Gibraltar	33691
+102	GNB	GW	Guinea-Bissau	Guiné-Bissau	2015490
+103	GUY	GY	Guyana	Guyana	790329
+104	HKG	HK	Hong Kong	香港	7413100
+106	NGA	NG	Nigeria	Nigeria	211400704
+107	NLD	NL	Netherlands	Nederland	17533405
+108	NPL	NP	Nepal	नेपाल	29674920
+109	NRU	NR	Nauru	Nauru-Naoero	10873
+111	KNA	KN	Saint Kitts and Nevis	Saint Kitts and Nevis	53546
+112	KHM	KH	Cambodia	កម្ពុជា	16946446
+113	KIR	KI	Kiribati	Kiribati	121388
+114	CYM	KY	Cayman Islands	Cayman Islands	66498
+115	KAZ	KZ	Kazakhstan	Қазақстан	19002586
+116	LAO	LA	Laos	ປະເທດລາວ	7379358
+117	LBN	LB	Lebanon	لبنان	6769151
+118	LCA	LC	Saint Lucia	Saint Lucia	184401
+119	LIE	LI	Liechtenstein	Liechtenstein	38254
+120	LKA	LK	Sri Lanka	ශ්‍රී ලංකාව-இலங்கை	22156000
+121	PER	PE	Peru	Piruw-Piruw-Perú	33359416
+122	IDN	ID	Indonesia	Indonesia	276361788
+123	IRL	IE	Ireland	Ireland-Éire	5028230
+124	ISR	IL	Israel	إسرائيل-ישראל	9364000
+125	IMN	IM	Isle of Man	Isle of Man-Ellan Vannin	85410
+127	IRQ	IQ	Iraq	العراق-Îraq	41179351
+128	NIC	NI	Nicaragua	Nicaragua	6702379
+129	IND	IN	India	India-भारत	1393409033
+130	IRN	IR	Iran	ایران	85028760
+131	COM	KM	Comoros	جزر القمر-Comores-Komori	888456
+132	JPN	JP	Japan	日本	125681593
+133	KOR	KR	South Korea	대한민국	51744876
+134	KWT	KW	Kuwait	الكويت	4328553
+135	PYF	PF	French Polynesia	Polynésie Française	282534
+136	PAK	PK	Pakistan	Pakistan-پاكستان	225199929
+137	POL	PL	Poland	Polska	37781024
+140	LBR	LR	Liberia	Liberia	5180208
+141	LSO	LS	Lesotho	Lesotho-Lesotho	2159067
+142	LTU	LT	Lithuania	Lietuva	2795321
+143	LUX	LU	Luxembourg	Luxemburg-Luxembourg-Lëtzebuerg	639070
+144	PNG	PG	Papua New Guinea	Papua New Guinea-Papua Niu Gini-Papua Niugini	9119005
+145	MLT	MT	Malta	Malta-Malta	516869
+146	MUS	MU	Mauritius	Mauritius	1266060
+147	MDV	MV	Maldives	Republic of Maldives	543620
+148	MWI	MW	Malawi	Malawi-Malawi	19647681
+149	MEX	MX	Mexico	México	130262220
+150	MYS	MY	Malaysia	Malaysia	32776195
+151	MOZ	MZ	Mozambique	Moçambique	32163045
+152	PHL	PH	Philippines	Philippines-Pilipinas	111046910
+153	PRI	PR	Puerto Rico	Puerto Rico	3263584
+154	PSE	PS	Palestine	فلسطين	4922749
+155	PRT	PT	Portugal	Portugal	10299423
+156	PLW	PW	Palau	Palau-Belau	18174
+157	PRY	PY	Paraguay	Paraguay-Paraguái	7219641
+158	QAT	QA	Qatar	قطر	2930524
+159	ROU	RO	Romania	România	19115146
+160	SRB	RS	Serbia	Србија	6844078
+161	TJK	TJ	Tajikistan	Тоҷикистон	9749625
+163	TLS	TL	Timor-Leste	Timor-Leste-Timor Lorosae	1343875
+164	NAM		Namibia	Namibia	2587344
+165	NCL	NC	New Caledonia	Nouvelle-Calédonie	272620
+166	NER	NE	Niger	Niger	25130810
+168	NZL	NZ	New Zealand	New Zealand-Aotearoa	5122600
+169	OMN	OM	Oman	سلطنة عمان	5223376
+170	PAN	PA	Panama	Panamá	4381583
+171	LVA	LV	Latvia	Latvija	1883162
+172	LBY	LY	Libya	دولة ليبيا	6958538
+173	MAR	MA	Morocco	المغرب	37344787
+174	MCO	MC	Monaco	Monaco	39520
+175	MDA	MD	Moldova	Moldova	2573928
+176	MNE	ME	Montenegro	Црна Гора	620173
+177	MDG	MG	Madagascar	Madagascar-Madagasikara	28427333
+178	MHL	MH	Marshall Islands	Marshall Islands-Aorokin M¸Ajel	59618
+179	MKD	MK	North Macedonia	Северна Македонија	2065092
+180	MLI	ML	Mali	Mali	20855724
+181	MMR	MM	Myanmar/Burma	Myanma	54806014
+182	MNG	MN	Mongolia	Монгол Улс	3329282
+183	MAC	MO	Macau	澳門-Macau	658391
+184	MNP	MP	Northern Mariana Islands	Northern Mariana Islands-Notte Marianas-Northern Mariana Islands	57910
+185	MRT	MR	Mauritania	موريتانيا	4775110
+187	RUS	RU	Russian Federation	Россия	143446060
+188	RWA	RW	Rwanda	Rwanda-Rwanda-Rwanda	13276517
+189	SAU	SA	Saudi Arabia	السعودية	35340680
+190	SLB	SB	Solomon Islands	Solomon Islands	703995
+191	TKM	TM	Turkmenistan	Türkmenistan	6117933
+192	TUN	TN	Tunisia	تونس	11935764
+193	TON	TO	Tonga	Tonga-Tonga	106759
+194	TUR	TR	Turkey	Türkiye	85042736
+195	TTO	TT	Trinidad and Tobago	Trinidad and Tobago	1403374
+196	TUV	TV	Tuvalu	Tuvalu-Tuvalu	11925
+197	TZA	TZ	United Republic of Tanzania	Tanzania	61498438
+198	UKR	UA	Ukraine	Україна	43814581
+199	UGA	UG	Uganda	Uganda-Uganda	47123533
+201	URY	UY	Uruguay	Uruguay	3485152
+202	UZB	UZ	Uzbekistan	Узбекистан	34915100
+204	VCT	VC	Saint Vincent and The Grenadines	Saint Vincent and The Grenadines	111269
+205	SYC	SC	Seychelles	Sesel-Seychelles-Seychelles	99202
+206	SDN	SD	Sudan	السودان-Sudan	44909351
+207	SWE	SE	Sweden	Sverige	10415811
+208	SGP	SG	Singapore	新加坡-Singapore-Singapura-சிங்கப்பூர்	5453566
+210	SVN	SI	Slovenia	Slovinsko	2107007
+211	GBR	UK	United Kingdom	United Kingdom	67326569
+212	VNM	VN	Vietnam	Việt Nam	98168829
+213	VUT	VU	Vanuatu	Vanuatu-Vanuatu-Vanuatu	314464
+215	WSM	WS	Samoa	Samoa-Samoa	200144
+226	USA	US	United States	United States	331893745
+227	ZWE	ZW	Zimbabwe	Zimbabwe	15092171
+228	VEN	VE	Venezuela	Venezuela	28704947
+229	VGB	VG	British Virgin Islands	British Virgin Islands	30423
+230	VIR	VI	Us Virgin Islands	Us Virgin Islands	105870
+232	SVK	SK	Slovakia	Slovensko	5447247
+233	SLE	SL	Sierra Leone	Sierra Leone	8141343
+234	SMR	SM	San Marino	San Marino	34010
+235	SEN	SN	Senegal	Sénégal	17196308
+236	SOM	SO	Somalia	الصومال-Soomaaliya	16359500
+237	SUR	SR	Suriname	Suriname	591798
+238	SSD	SS	South Sudan	South Sudan	11381377
+239	STP	ST	Sao Tomé and Príncipe	Sao Tomé E Príncipe	223364
+240	SLV	SV	El Salvador	El Salvador	6518500
+241	SXM	SX	Sint-Maarten	Sint-Maarten	42846
+242	SYR	SY	Syria	سوريا	18275704
+243	SWZ	SZ	Eswatini	Kingdom of Eswatini	1172369
+244	TCA	TC	Turks and Caicos Islands	Turks and Caicos Islands	39226
+245	TCD	TD	Chad	تشاد-Tchad	16914985
+247	TGO	TG	Togo	Togo	8478242
+248	THA	TH	Thailand	ประเทศไทย	69950844
+254	YEM	YE	Yemen	اليمن	30490639
+255	ZAF	ZA	South Africa	Suid-Afrika-South Africa-Sewula Afrika-Afrika-Borwa-Afrika-Borwa-Ningizimu Afrika-Aforika Borwa-Afrika Dzonga-Afurika Tshipembe-Mzantsi Afrika-Ningizimu Afrika	60041996
+256	ZMB	ZM	Zambia	Zambia	18920657
+257	NOR	NO	Norway	Norga-Noreg-Norge	5408320
