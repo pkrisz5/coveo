@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: leader-locking-nfs-provisioner
+  namespace: kooplex-veo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: leader-locking-nfs-provisioner
+subjects:
+- kind: ServiceAccount
+  name: nfs-provisioner
+  namespace: kooplex-veo

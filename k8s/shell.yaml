@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: shell
+  namespace: kooplex-veo
+spec:
+  podManagementPolicy: Parallel
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: shell
+  serviceName: shell
+  template:
+    metadata:
+      labels:
+        app: shell
+    spec:
+      containers:
+      - command:
+        - sleep
+        - infinity
+        env:
+        - name: SECRET_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: admin
+              name: pg-admin-ebi
+        - name: SECRET_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: adminpw
+              name: pg-admin-ebi
+        image: image-registry.vo.elte.hu/rstudio-363-ubuntu18-v4.0
+        imagePullPolicy: Always
+        name: postgres-shell
+        resources:
+          limits:
+            memory: 14G
+          requests:
+            memory: 13G
+        volumeMounts:
+        - mountPath: /mnt/archive
+          name: storage
+          subPath: archive
+        - mountPath: /mnt/scripts
+          name: storage
+          subPath: scripts
+        - mountPath: /mnt/xfer
+          name: storage
+          subPath: xfer.tmp
+      hostname: postgres-shell
+      restartPolicy: Always
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: twenty

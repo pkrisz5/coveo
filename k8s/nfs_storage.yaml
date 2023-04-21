@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: twenty
+  namespace: kooplex-veo
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 19000Gi
+  storageClassName: kooplex-nfs

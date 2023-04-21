@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-kooplex-prod
+  namespace: kooplex-veo
+spec:
+  ports:
+  - name: port-prod
+    port: 5433
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: app-prod
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-kooplex-prod
+  namespace: kooplex-veo
+spec:
+  podManagementPolicy: Parallel
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: app-prod
+  serviceName: postgres
+  template:
+    metadata:
+      labels:
+        app: app-prod
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: adminpw
+              name: pg-admin-ebi
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              key: admin
+              name: pg-admin-ebi
+        - name: PGDATA
+          value: /var/lib/postgresql/data_prod
+        image: postgres:15.1
+        imagePullPolicy: IfNotPresent
+        name: postgres-prod
+        ports:
+        - containerPort: 5432
+          name: port-prod
+          protocol: TCP
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data_prod
+          name: storage
+          subPath: prod
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: twenty

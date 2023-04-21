@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: report
+  namespace: kooplex-veo
+spec:
+  rules:
+  - host: coveo.vo.elte.hu
+    http:
+      paths:
+      - backend:
+          service:
+            name: report
+            port: 
+              number: 3838
+        path: /report(/|$)(.*)
+        pathType: Prefix
+  tls:
+  - hosts:
+    - coveo.vo.elte.hu
+    secretName: tls-ena

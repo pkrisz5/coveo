@@ -1,0 +1,11 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: kooplex-nfs
+#  annotations:
+#    storageclass.kubernetes.io/i-default-class: "true"
+mountOptions:
+- vers=4.1
+provisioner: example.com/nfs
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
