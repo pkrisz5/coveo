@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: report
+  namespace: kooplex-veo
+spec:
+  podManagementPolicy: Parallel
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: app-report
+  serviceName: report
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app-report
+    spec:
+      containers:
+      - env:
+        - name: LANG
+          value: en_US.UTF-8
+        - name: REPORT_NAME
+          value: helloworld
+        image: image-registry.vo.elte.hu/report-shiny-v5
+        imagePullPolicy: IfNotPresent
+        name: report
+        ports:
+        - containerPort: 9000
+          name: shinyreport
+          protocol: TCP
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                [ '/bin/sh', '-c', '/usr/bin/sed -i s,\#\#BASEURL\#\#,, /etc/shiny-server/shiny-server.conf && echo $?' ]
+        resources:
+          limits:
+            memory: 4G
+          requests:
+            memory: 2G
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /srv/report/helloworld
+          name: pv
+          readOnly: true
+          subPath: scripts/app/helloworld
+        - mountPath: /srv/report/report-1
+          name: pv
+          readOnly: true
+          subPath: scripts/app/report-1
+        - mountPath: /srv/report/report-2
+          name: pv
+          readOnly: true
+          subPath: scripts/app/report-2
+        - mountPath: /srv/report/sandbox
+          name: pv
+          readOnly: true
+          subPath: scripts/app/sandbox
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: pv
+        persistentVolumeClaim:
+          claimName: twenty
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate

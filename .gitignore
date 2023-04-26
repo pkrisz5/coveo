@@ -37,3 +37,10 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# k8s
+secret.yaml
+tls.yaml
+
+# vim swap
+*.sw?

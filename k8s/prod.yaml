@@ -58,9 +58,16 @@ spec:
         - mountPath: /var/lib/postgresql/data_prod
           name: storage
           subPath: prod
+        - mountPath: /dev/shm
+          name: cache-volume
       restartPolicy: Always
       schedulerName: default-scheduler
       volumes:
       - name: storage
         persistentVolumeClaim:
           claimName: twenty
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi
+        name: cache-volume
+

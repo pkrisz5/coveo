@@ -61,3 +61,11 @@ kubectl apply -f tls.yaml
 kubectl apply -f report_svc.yaml
 kubectl apply -f report_ingress.yaml
 ```
+
+## Start shiny app
+
+Make sure in the report folders the config files are filkled properly.
+
+```bash
+kubectl apply -f report.yaml
+```
