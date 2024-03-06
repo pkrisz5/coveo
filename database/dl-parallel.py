@@ -24,7 +24,7 @@ def worker(od, skp, e, q, t):
             if resp.status_code != 200:
                 print ("{0} EE {1} {2}".format(datetime.datetime.now(), url, resp.status_code))
                 time.sleep(1)
-                q.put_nowait(url)
+                q.put_nowait((url, md5))
                 continue
             md5_ = hashlib.md5(resp.content).hexdigest()
             if md5 != md5_:
