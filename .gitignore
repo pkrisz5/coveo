@@ -44,3 +44,6 @@ tls.yaml
 
 # vim swap
 *.sw?
+
+# python cache
+__pycache__/

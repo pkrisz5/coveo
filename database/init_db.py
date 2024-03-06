@@ -147,7 +147,6 @@ def drop_schema(args):
 ##])
 ##def grant_role(args):
 ##    sql = f"""
-#####     GRANT USAGE ON SCHEMA datahub_0 TO public_reader;
 ##-- GRANT ALL ON SCHEMA {args.schema} TO {args.role};
 ##GRANT USAGE ON SCHEMA {args.schema} TO {args.role};
 ##ALTER ROLE {args.role} SET search_path={args.schema};
@@ -169,12 +168,13 @@ def create_types(args):
 
 @subcommand([
     argument("-S", "--schema", action="store", help="schema name", required=True),
+    argument("-l", "--schema_load", action="store", help="load schema name", required=True),
     argument("-L", "--load_tables", action="store", help="when creating load tables, this is the prefix", required=False),
 ])
 def create_tables(args):
     from schema import tables_common, tables_load
     if args.load_tables:
-        sql = tables_load.format(schema = args.schema, prefix = args.load_tables)
+        sql = tables_load.format(schema = args.schema, schema_load = args.schema_load, prefix = args.load_tables)
     else:
         sql = tables_common.format(schema = args.schema)
     exec_commit(args, sql)
@@ -332,25 +332,6 @@ def populate_tables(args):
     c.close()
 
 
-@subcommand([argument("-S", "--schema", action="store", help="schema name", required=True)])
-def create_views(args):
-    from schema import views
-    sql = views.format(schema = args.schema)
-    exec_commit(args, sql)
-
-
-@subcommand([argument("-S", "--schema", action="store", help="schema name", required=True)])
-def create_materialized_views(args):
-    from schema import materialized_views
-    sql = materialized_views.format(schema = args.schema)
-    exec_commit(args, sql)
-
-
-@subcommand([argument("-S", "--schema", action="store", help="schema name", required=True)])
-def create_indexes(args):
-    from schema import indexes
-    sql = indexes.format(schema = args.schema)
-    exec_commit(args, sql)
 
 
 if __name__ == "__main__":

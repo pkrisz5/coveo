@@ -52,6 +52,8 @@ if __name__ == '__main__':
                      help = "database name", default = os.getenv('DB', 'coveo'))
     parser.add_argument("-S", "--schema", action = "store",
                      help = "schema name", default = os.getenv('DB_SCHEMA', 'ebi'))
+    parser.add_argument("-L", "--schema_load", action = "store",
+                     help = "schema name where to load temporary tables", default = os.getenv('DB_SCHEMA_LOAD', 'ebi'))
     parser.add_argument("-u", "--user", action = "store",
                      help = "database user", default = os.getenv('SECRET_USERNAME'))
     parser.add_argument("-p", "--password", action = "store",
@@ -74,8 +76,8 @@ if __name__ == '__main__':
 
     tables = {
         't_runid': "{}.{}".format(args.schema, args.runid_table_name),
-        't_cov': "{}.{}".format(args.schema, args.cov_table_name),
-        't_unique': "{}.{}".format(args.schema, args.covunique_table_name),
+        't_cov': "{}.{}".format(args.schema_load, args.cov_table_name),
+        't_unique': "{}.{}".format(args.schema_load, args.covunique_table_name),
     }
 
     conn = psycopg2.connect(
@@ -105,7 +107,12 @@ if __name__ == '__main__':
     counter = 0
     while True:
         now = datetime.datetime.now()
-        ti = T.next()
+        try:
+            ti = T.next()
+        except Exception as e:
+            print ("{0} ERROR cannot step to next archive item -- {1}".format(now, e))
+            ti = None
+
         if ti is None:
             T.close()
             print ("{0} loop ends closed tarfile".format(now))
@@ -114,7 +121,7 @@ if __name__ == '__main__':
             continue
 
         if not ti.name.endswith('.coverage.gz'):
-            print ("{0} STRANGE file name {1} skipped".format(now, ti.name))
+            #print ("{0} STRANGE file name {1} skipped".format(now, ti.name))
             continue
 
         runid = the_map.get_id( extract_ena_run(ti.name) )

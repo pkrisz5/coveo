@@ -24,12 +24,12 @@ def bulk_insert(tables, offset, conn, C, snapshot, VCF, ANN, LOF, uniq, cnt):
         pipe, sep = '\t', header = False, index = False
     )
     pipe.seek(0)
-    print ("{0} pushing {1} unique records in db".format(datetime.datetime.now(), cnt))
+    print ("{0} pushing {1} unique records in db".format(datetime.datetime.now(), cnt), flush=True)
     C.copy_expert(f"COPY {tables['t_unique']} FROM STDIN", pipe)
     pipe.close()
 
     VCFC = pandas.concat(VCF.values())
-    print ("{0} pushing {1} records in db".format(datetime.datetime.now(), VCFC.shape[0]))
+    print ("{0} pushing {1} records in db".format(datetime.datetime.now(), VCFC.shape[0]), flush=True)
 
     pipe = io.StringIO()
     VCFKEY = VCFC[KEY].drop_duplicates().reset_index()
@@ -107,6 +107,8 @@ if __name__ == '__main__':
                      help = "database name", default = os.getenv('DB', 'coveo'))
     parser.add_argument("-S", "--schema", action = "store",
                      help = "schema name", default = os.getenv('DB_SCHEMA', 'ebi'))
+    parser.add_argument("-L", "--schema_load", action = "store",
+                     help = "schema name where to load temporary tables", default = os.getenv('DB_SCHEMA_LOAD', 'ebi'))
     parser.add_argument("-u", "--user", action = "store",
                      help = "database user", default = os.getenv('SECRET_USERNAME'))
     parser.add_argument("-p", "--password", action = "store",
@@ -161,12 +163,12 @@ if __name__ == '__main__':
 
     tables = {
         't_runid': "{}.{}".format(args.schema, args.runid_table_name),
-        't_vcf': "{}.{}".format(args.schema, args.vcf_table_name),
-        't_key': "{}.{}".format(args.schema, args.vcfkey_table_name),
-        't_ann': "{}.{}".format(args.schema, args.vcfannotation_table_name),
-        't_lof': "{}.{}".format(args.schema, args.vcflof_table_name),
-        't_unique': "{}.{}".format(args.schema, args.vcfunique_table_name),
-        't_binding': "{}.{}".format(args.schema, args.annotation_binding),
+        't_vcf': "{}.{}".format(args.schema_load, args.vcf_table_name),
+        't_key': "{}.{}".format(args.schema_load, args.vcfkey_table_name),
+        't_ann': "{}.{}".format(args.schema_load, args.vcfannotation_table_name),
+        't_lof': "{}.{}".format(args.schema_load, args.vcflof_table_name),
+        't_unique': "{}.{}".format(args.schema_load, args.vcfunique_table_name),
+        't_binding': "{}.{}".format(args.schema_load, args.annotation_binding),
     }
     
     conn = psycopg2.connect(
@@ -178,7 +180,7 @@ if __name__ == '__main__':
         application_name = f'ebi_vcf.py run by {args.user}',
     )
     C = conn.cursor()
-    print ("{0} connected to db engine to use db {1}".format(datetime.datetime.now(), args.database))
+    print ("{0} connected to db engine to use db {1}".format(datetime.datetime.now(), args.database), flush=True)
 
     the_map = Map(conn, C, tables['t_runid'])
     uniq_before = uniq(conn, tables['t_unique'])
@@ -194,12 +196,12 @@ if __name__ == '__main__':
         offset_ro, = C.fetchall()[0]
         if offset_ro:
             offset = max(offset, offset_ro)
-    print ("{0} offset is {1}".format(datetime.datetime.now(), offset))
+    print ("{0} offset is {1}".format(datetime.datetime.now(), offset), flush=True)
 
     snapshot = args.snapshot if args.snapshot else extract_ena_run(args.input)
 
     T = tarfile.open(args.input)
-    print ("{0} open tar file {1}, snapshot: {2}".format(datetime.datetime.now(), args.input, snapshot))
+    print ("{0} open tar file {1}, snapshot: {2}".format(datetime.datetime.now(), args.input, snapshot), flush=True)
 
     ts = []
     ena_run = []
@@ -217,24 +219,25 @@ if __name__ == '__main__':
         ti = T.next()
         if ti is None:
             T.close()
-            print ("{0} loop ends closed tarfile".format(now))
+            print ("{0} loop ends closed tarfile".format(now), flush=True)
             break
         if not ti.isfile():
             continue
 
         if not ti.name.endswith('.annot.vcf.gz'):
-            print ("{0} STRANGE file name {1} skipped".format(now, ti.name))
+            #print ("{0} STRANGE file name {1} skipped".format(now, ti.name), flush=True)
             continue
 
         runid = the_map.get_id( extract_ena_run(ti.name) )
         if runid in uniq_before:
-            print ("{0} DUPLICATE file name {1} -> ena_run {2} is not new".format(now, ti.name, runid))
+            print ("{0} DUPLICATE file name {1} -> ena_run {2} is not new".format(now, ti.name, runid), flush=True)
             continue
 
         counter += 1
         ts.append( now.isoformat() )
         ena_run.append( runid )
-        #print ("{0} start to process {1}, ena_run {2} {3}".format(now, ti.name, runid, counter))
+        # COMMENT IF NO VERBOSE
+        #print ("{0} start to process {1}, ena_run {2} {3}".format(now, ti.name, runid, counter), flush=True)
     
         buf = T.extractfile(ti)
         try:
@@ -248,7 +251,7 @@ if __name__ == '__main__':
             )
             records = vcf.shape[0]
         except Exception as e:
-            print ("{0} cannot parse file {1}: reason {2}".format(now, ti.name, str(e)))
+            print ("{0} cannot parse file {1}: reason {2}".format(now, ti.name, str(e)), flush=True)
             integrity.append('corrupt file')
             continue
         finally:
@@ -257,7 +260,7 @@ if __name__ == '__main__':
 
         if records == 0:
             integrity.append('empty file')
-            print ("{0} empty file {1}".format(now, ti.name))
+            print ("{0} empty file {1}".format(now, ti.name), flush=True)
             del vcf
             continue
     
@@ -285,7 +288,7 @@ if __name__ == '__main__':
             vcf.drop(columns = ['QUAL'], inplace = True)
             integrity.append('ok')
         except Exception as e:
-            print ("{0} problem processing file {1} -- {2}".format(now, ti.name, e))
+            print ("{0} problem processing file {1} -- {2}".format(now, ti.name, e), flush=True)
             integrity.append('corrupt file')
             continue
 
@@ -341,7 +344,7 @@ if __name__ == '__main__':
         bulk_insert(tables, offset, conn, C, snapshot, VCF, ANN, LOF, uniq, counter)
 
     conn.commit()
-    print ("{0} commited".format(datetime.datetime.now()))
+    print ("{0} commited".format(datetime.datetime.now()), flush=True)
     
     C.close()
     conn.close()
