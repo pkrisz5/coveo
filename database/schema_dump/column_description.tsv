@@ -2,7 +2,7 @@ table	column	type	description
 amino_acid_symbol	name	character varying(16)	Full name of the amino acid
 amino_acid_symbol	symbol_3letter	character(3)	Three letter symbol of the amino acid
 amino_acid_symbol	symbol_1letter	character(1)	Single letter symbol of the amino acid
-annotation  key  bigint  Mutation id. This can be joined 'key' column in the 'vcf_key' table.
+annotation	key	bigint	Mutation id. This can be joined 'key' column in the 'vcf_key' table.
 annotation	annotation_impact	USER-DEFINED	Annotation Impact
 annotation	gene_name	USER-DEFINED	Gene Name
 annotation	feature_type	USER-DEFINED	Feature Type
