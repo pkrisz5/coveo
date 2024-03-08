@@ -33,3 +33,8 @@ vcf	indel	boolean	If TRUE the the mutation is an INDEL
 vcf	nmd	type_nmd	NMD
 vcf	major	boolean	If it is TRUE then the nanopore defined mutation is trustful. If it is FALSE then the nanopore defined mutation is not trustful, do not use it in normal situation.
 vcf	ann_num	integer	 Number of annotation
+vcf_key	key	bigint	Mutation id. This can be joined 'key' column in the 'vcf' table. This can be joined 'key' column in the 'vcf_lof' table. This can be joined 'key' column in the 'annotation' table.
+vcf_key	runid	integer	Run id. This can be joined 'id' column in the 'runid' table. 
+vcf_key	pos	integer	Position on the SARS-CoV-2 reference sequence
+vcf_key	ref	text	Reference allel
+vcf_key	alt	text	Alternate allel
