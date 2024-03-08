@@ -19,3 +19,17 @@ annotation	aa_pos	integer	Position of amino acide (one based)
 annotation	aa_length	integer	Number of amino acide (including START, but not STOP).
 annotation	distance	integer	Distance to feature: All items in this field are options, so the field could be empty
 annotation	errors_warnings_info	text	Add errors, warnings or informative message that can affect annotation accuracy. It can be added using either 'codes' or 'message types'. All these errors, warnings or information messages messages are optional.
+vcf	key	bigint	Mutation id. This can be joined "key" column in the "vcf_key" table.
+vcf	qual	integer	Quality score
+vcf	dp	integer	Raw Depth
+vcf	af	real	Allele Frequency
+vcf	sb	integer	Phred-scaled strand bias at this position
+vcf	count_ref_forward_base	integer	Counts for ref-forward bases
+vcf	count_ref_reverse_base	integer	Counts for ref-reverse
+vcf	count_alt_forward_base	integer	Counts for alt-forward
+vcf	count_alt_reverse_base	integer	Counts for alt-reverse bases
+vcf	hrun	integer	Homopolymer length to the right of report indel position
+vcf	indel	boolean	If TRUE the the mutation is an INDEL
+vcf	nmd	type_nmd	NMD
+vcf	major	boolean	If it is TRUE then the nanopore defined mutation is trustful. If it is FALSE then the nanopore defined mutation is not trustful, do not use it in normal situation.
+vcf	ann_num	integer	 Number of annotation
