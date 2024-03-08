@@ -1,3 +1,5 @@
 table	description
 amino_acid_symbol	Contains the full name and the abbrevations (3 letter symbol; 1 letter symbol) of the 20 amino acids. This table is used to match the long and short names of amino acids
 annotation	Annotation of mutation by SNPeff tool
+vcf	Mutations in the SARS-CoV-2 samples in VCF format (filtered). This is the filtered version of 'vcf_all' table. Filter: AF>0.1
+vcf_key	List of mutations in  SARS-CoV-2 samples. This contains the very basiq properies of each mutations like its id, position, ref and alt bases. 
