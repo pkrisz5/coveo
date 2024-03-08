@@ -19,7 +19,7 @@ annotation	aa_pos	integer	Position of amino acide (one based)
 annotation	aa_length	integer	Number of amino acide (including START, but not STOP).
 annotation	distance	integer	Distance to feature: All items in this field are options, so the field could be empty
 annotation	errors_warnings_info	text	Add errors, warnings or informative message that can affect annotation accuracy. It can be added using either 'codes' or 'message types'. All these errors, warnings or information messages messages are optional.
-vcf	key	bigint	Mutation id. This can be joined "key" column in the "vcf_key" table.
+vcf	key	bigint	Mutation id. This can be joined 'key' column in the 'vcf_key' table.
 vcf	qual	integer	Quality score
 vcf	dp	integer	Raw Depth
 vcf	af	real	Allele Frequency
