@@ -46,3 +46,23 @@ country	iso_a2	character(2)	Country Codes Alpha-2 ( ISO 3166)
 country	country_name	character varying	Official name of the country
 country	country_name_local	text	Official local name of the country
 country	population_2021	integer	Population in the country in 2021.
+metadata	runid	integer	Run id. This can be joined 'id' column in the 'runid' table. This can be joined 'runid' column in the 'metaextension' table
+metadata	collection_date	date	Date of sample collection
+metadata	collection_date_valid	boolean	Is the date of collection (column 'collection_date') valid? This can only be one of the following values ['TRUE', 'FALSE']. 
+metadata	country_id	integer	Contry id.  This can be joined 'id' column in the 'country' table
+metadata	host_id	integer	Host id. This can be joined 'id' column in the 'host' table
+metadata	host_sex	type_sex	Sex of host
+metadata	instrument_id	integer	Instrument id. This can be joined 'id' column in the 'instrument' table
+metadata	sample_accession	character varying	Sample ENA id
+metadata	study_accession	character varying	Study ENA id
+metadata	experiment_accession	character varying	Experiment ENA id
+runid	id	integer	Run id. This run id belongs to a given measurement. This can be joined 'runid' column in the 'metadata' table. This can be joined 'runid' column in the 'metaextension' table. This can be joined 'runid' column in the 'cov' table. This can be joined 'runid' column in the 'vcf_key' table
+runid	ena_run	character varying	ENA Run ID. 
+aa_mutation	ena_run	integer	This run id belongs to a given measurement.
+aa_mutation	country_name	character varying	Official name of the country
+aa_mutation	iso_a3	character(3)	Country Codes Alpha-3 ( ISO 3166)
+aa_mutation	country_id	integer	Contry id.  
+aa_mutation	collection_date	date	Date of sample collection
+aa_mutation	runid	integer	Run id. This run id belongs to a given measurement.
+aa_mutation	aa_mutation	text	Amino acid mutation (reference amino acid, position, alternate amino acid) triplet
+aa_mutation	barcode_id	integer	Barcode id
