@@ -38,3 +38,11 @@ vcf_key	runid	integer	Run id. This can be joined 'id' column in the 'runid' tabl
 vcf_key	pos	integer	Position on the SARS-CoV-2 reference sequence
 vcf_key	ref	text	Reference allel
 vcf_key	alt	text	Alternate allel
+barcode	id	integer	Unique id of the barcode. 
+barcode	aa_mutation	text	Amino acid mutation pattern that defines the given barcode. This is a list of (reference amino acid, position, alternate amino acid) triplets.
+country	id	integer	Contry id.  This can be joined 'country_id' column in the 'country' table
+country	iso_a3	character(3)	Country Codes Alpha-3 ( ISO 3166)
+country	iso_a2	character(2)	Country Codes Alpha-2 ( ISO 3166)
+country	country_name	character varying	Official name of the country
+country	country_name_local	text	Official local name of the country
+country	population_2021	integer	Population in the country in 2021.
