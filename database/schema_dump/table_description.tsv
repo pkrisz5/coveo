@@ -7,3 +7,6 @@ _bc_stg1	Intermediate tables for barcode materialized view
 _bc_stg2	Intermediate tables for barcode materialized view
 barcode	Barcodes are aminoacide mutation pattern of S protein. This table contains the ids of barcodes and the aminoacide pattern
 country	Various names and populations of countries in 2021
+metadata	Contains metadata for each sample
+runid	An integer run id was assinged to each ENA run id. 
+aa_mutation	Contains amino acid mutation in S protein
