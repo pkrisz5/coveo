@@ -66,3 +66,32 @@ aa_mutation	collection_date	date	Date of sample collection
 aa_mutation	runid	integer	Run id. This run id belongs to a given measurement.
 aa_mutation	aa_mutation	text	Amino acid mutation (reference amino acid, position, alternate amino acid) triplet
 aa_mutation	barcode_id	integer	Barcode id
+annotation_binding	key	bigint	 Id of gene name - mutation type pair
+annotation_binding	gene_name	type_genename	Gene name
+annotation_binding	annotation_atom	type_annotation_atom	Type of mutation
+metaextension	runid	integer	Run id. This run id belongs to a given measurement. This can be joined 'runid' column in the 'metadata' table. This can be joined 'id' column in the 'runid' table. 
+metaextension	description	text	Description of the experiment
+metaextension	fastq_ftp	text	Url to the raw FASTQ files
+metaextension	isolate	character varying	Isolate
+metaextension	sample_capture_status	type_status	Status of Sample Capture
+metaextension	strain	character varying	Strain
+metaextension	checklist	character varying	Checklist
+metaextension	base_count	double precision	Base Count
+metaextension	library_name	character varying	Library Name
+metaextension	library_id	integer	Library id. This can be joined 'id' column in the 'library' table. 
+metaextension	first_created	date	Date when this record was created
+metaextension	first_public	date	Date when this record become public
+metaextension	collector_id	integer	Collector id. This can be joined 'id' column in the 'collector' table. 
+metaextension	country_raw	text	Submitter given country name. This is the raw data, many times it is not correct. The country name later was cleaned and the clean country name is in 'metadata' table
+human_metadata	runid	integer	Run id. This run id belongs to a given measurement.
+human_metadata	collection_date	date	Date of sample collection
+human_metadata	country_id	integer	Contry id.
+human_metadata	host_sex	type_sex	Sex of host
+human_metadata	instrument_id	integer	Instrument id. This can be joined 'id' column in the 'instrument' table
+human_metadata	sample_accession	character varying	Sample ENA id
+human_metadata	study_accession	character varying	Study ENA id
+human_metadata	experiment_accession	character varying	Experiment ENA id
+human_metadata	date_year	integer	Collection date, only year
+human_metadata	date_week	integer	Collection date, only week
+human_metadata	date_truncated	date	Collection date weekly prescision
+
