@@ -108,14 +108,3 @@ jhd_covid_country_weekly	country_id	integer	Contry id.
 jhd_covid_country_weekly	date_year	integer	Year
 jhd_covid_country_weekly	date_week	integer	Week
 jhd_covid_country_weekly	cases	numeric	Number of new cases (this is the cases not the samples. Not all new cases were sequenced)
-app_human_meta_mv_jhd	country_name	character varying	Name of the country
-app_human_meta_mv_jhd	date	date	Date of a given week 
-app_human_meta_mv_jhd	date_year	integer	Year
-app_human_meta_mv_jhd	date_week	integer	Week
-app_human_meta_mv_jhd	weeekly_sample	integer	Number of collected sampes on the given week
-app_human_meta_mv_jhd	cases	integer	Number of new cases on the given week
-app_human_meta_mv_jhd	pct	numeric	How many percent of the new samples were sequences and inserted this database as a sample
-
-
-
-
