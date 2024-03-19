@@ -17,3 +17,4 @@ app_country_samples_full	This is a helper table of COVEO app. Contains informati
 app_human_meta_mv	This is a helper table of COVEO app. Number of samples derived form a given country in a given week. Basically this is a weekly aggregated sample number for countries
 jhd_covid_country_weekly	Number of new cases of a given week in a given country. These are the new cases, derived from John Hopkins Corona virus Resource Center. Not all of these new cases has sequence information
 app_human_meta_mv_jhd	Contains weekly aggregated information about how many new cases appeared from a given week and how many out of the were actually sequenced and inserted this database as a new sample
+lineage_def	Table contains the defining mutations of the WHO COVID variant
