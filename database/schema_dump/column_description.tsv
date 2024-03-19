@@ -136,5 +136,7 @@ unique_vcf	snapshot	character varying(32)	 Snapshot id that contained the origin
 unique_vcf	integrity	type_integrity	Was the original vcf file ok
 variant_mutations	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
 variant_mutations	mutations	integer	Number of mutations in the given WHO defined variant
-
-
+lineage	runid	integer	Run id. This run id belongs to a given measurement.
+lineage	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
+lineage	n	integer	Number of mutation from the given WHO variant definition that is actually present in the given sample
+lineage	required_mutation	integer	Number of mutation in the given WHO variant definition
