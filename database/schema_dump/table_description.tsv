@@ -20,3 +20,8 @@ app_human_meta_mv_jhd	Contains weekly aggregated information about how many new 
 lineage_def	Table contains the defining mutations of the WHO COVID variant
 unique_vcf	Information about the original vcf file that was uploaded into the database
 variant_mutations	Contains information about how many mutations are in the WHO defined variant
+lineage	Each samples was assinged (if possible) into a WHO defined variant based on the mutation pattern
+app_lineage	This is a helper table of COVEO app. Contains information about how many samples belongs to a given WHO variant collected from a given date in a given country
+app_variants_weekly	This is a helper table of COVEO app. Contains information about how many samples belongs to a given WHO variant collected from a given week in a given country
+codon_code	Defines which condon codes a given amino acid
+collector	Collector of the sample
