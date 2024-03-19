@@ -115,7 +115,18 @@ app_human_meta_mv_jhd	date_week	integer	Week
 app_human_meta_mv_jhd	weeekly_sample	integer	Number of collected sampes on the given week
 app_human_meta_mv_jhd	cases	integer	Number of new cases on the given week
 app_human_meta_mv_jhd	pct	numeric	How many percent of the new samples were sequences and inserted this database as a sample
-
-
-
-
+lineage_def	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
+lineage_def	pango	text	Pango linage ID
+lineage_def	type_variant	text	Type of variant (eg.: VOC)
+lineage_def	amino_acid_change	text	Amino acid change that belongs to a given WHO defined SARS-CoV-2 variant
+lineage_def	protein_codon_position	integer	Positon of the amino acide change in the S protein
+lineage_def	ref_protein	text	Reference amino acide
+lineage_def	alt_protein	text	Alternate amino acide
+lineage_def	gene	text	Name of gene where the mutation occurs
+lineage_def	effect	text	Effect of the mutation
+lineage_def	snpeff_original_mut	text	snpeff_original_mut
+lineage_def	ref_pos_alt	text	Mutation at nucleotide level
+lineage_def	ref	text	Reference nucleotide
+lineage_def	alt	text	Alternate nucteotide
+lineage_def	pos	integer	Positon of the nucleotide change
+lineage_def	description	text	Description of the WHO variant
