@@ -14,4 +14,6 @@ annotation_binding	Gene name - mutation type pairs
 metaextension	This is an extension to 'metadata' table  that contains extra information to each run id.
 human_metadata	This is a filtered version of 'metadata' table. That contains only human data where the collection date is earlier than submission date. This is the list of useable human samples
 app_country_samples_full	This is a helper table of COVEO app. Contains information about how many samples derived from different countries
-
+app_human_meta_mv	This is a helper table of COVEO app. Number of samples derived form a given country in a given week. Basically this is a weekly aggregated sample number for countries
+jhd_covid_country_weekly	Number of new cases of a given week in a given country. These are the new cases, derived from John Hopkins Corona virus Resource Center. Not all of these new cases has sequence information
+app_human_meta_mv_jhd	Contains weekly aggregated information about how many new cases appeared from a given week and how many out of the were actually sequenced and inserted this database as a new sample
