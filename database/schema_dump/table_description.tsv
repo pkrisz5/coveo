@@ -13,5 +13,5 @@ aa_mutation	Contains amino acid mutation in S protein
 annotation_binding	Gene name - mutation type pairs
 metaextension	This is an extension to 'metadata' table  that contains extra information to each run id.
 human_metadata	This is a filtered version of 'metadata' table. That contains only human data where the collection date is earlier than submission date. This is the list of useable human samples
-
+app_country_samples_full	This is a helper table of COVEO app. Contains information about how many samples derived from different countries
 
