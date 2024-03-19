@@ -140,3 +140,23 @@ lineage	runid	integer	Run id. This run id belongs to a given measurement.
 lineage	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
 lineage	n	integer	Number of mutation from the given WHO variant definition that is actually present in the given sample
 lineage	required_mutation	integer	Number of mutation in the given WHO variant definition
+app_lineage	collection_date	date	Collection date (weekly aggregated)
+app_lineage	country	character varying	Name of the country
+app_lineage	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
+app_lineage	n	integer	Number of collected samples belonging to a given variant
+app_lineage	n_all	integer	Number of collected samples
+app_lineage	pct	numeric	How many percent of the the collected sample belongs to a given variant
+app_variants_weekly	country	character varying	Name of the country
+app_variants_weekly	date_year	integer	Year
+app_variants_weekly	date_week	integer	Week
+app_variants_weekly	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
+app_variants_weekly	weekly_variant_sample	Number of collected samples belonging to a given variant
+codon_code	na1	text	1st nucleotide in the codeon
+codon_code	na2	text	2nd nucleotide in the codeon
+codon_code	na3	text	3rd nucleotide in the codeon
+codon_code	codon	text	Codon
+codon_code	aa	text	Three letter symbol of the amino acid
+collector	id	integer	ID of the collector
+collector	broker_name	text	Name of broker_name
+collector	collected_by	text	Collected by
+collector	center_name	text	Name of the center
