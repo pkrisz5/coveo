@@ -134,7 +134,7 @@ unique_vcf	runid	integer	Run id. This run id belongs to a given measurement.
 unique_vcf	insertion_ts	timestamp without time zone	Time when the vcf file was inserted into the database
 unique_vcf	snapshot	character varying(32)	 Snapshot id that contained the original vcf file
 unique_vcf	integrity	type_integrity	Was the original vcf file ok
-variant_mutations	variant_id		text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
+variant_mutations	variant_id	text	Name of WHO SARS-CoV-2 variant (eg.: Alpha, Beta, Gamma, Delta, Omicron)
 variant_mutations	mutations	integer	Number of mutations in the given WHO defined variant
 
 
