@@ -94,4 +94,8 @@ human_metadata	experiment_accession	character varying	Experiment ENA id
 human_metadata	date_year	integer	Collection date, only year
 human_metadata	date_week	integer	Collection date, only week
 human_metadata	date_truncated	date	Collection date weekly prescision
-
+app_country_samples_full	country	character varying	Name of the country
+app_country_samples_full	n_sample	numeric	Number of samples derived from the given sample
+app_country_samples_full	log_n_sample	numeric	Log10 of the number of samples derived from the given sample
+app_country_samples_full	relative_n_sample	numeric	Number of samples derived from 1000000 residents of the country
+app_country_samples_full	relative_log_n_sample	numeric	Log10 of the number of samples derived from 1000000 residents of the country
