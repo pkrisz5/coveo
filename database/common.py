@@ -76,6 +76,17 @@ def bulk_insert(table, conn, C, db_table):
     C.copy_expert(f"COPY {db_table} FROM STDIN WITH (format csv, delimiter '\t')", pipe)
     pipe.close()
 
+def skip(fn):
+    if not os.path.exists(fn):
+        if fn:
+            raise FileNotFoundError(fn)
+        print ("{0} no skip runids file provided".format(datetime.datetime.now()))
+        return []
+    with open(fn) as f:
+        skp=[ x.strip() for x in f.readlines() ]
+    print ("{0} skip #{2} runids loaded from file {1}".format(datetime.datetime.now(), fn, len(skp)))
+    return skp
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

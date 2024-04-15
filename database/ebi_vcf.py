@@ -8,7 +8,7 @@ import datetime
 import gzip
 import numpy
 
-from common import Map, uniq
+from common import Map, uniq, skip
 
 KEY = [ 'ena_run', 'pos', 'ref', 'alt' ]
 
@@ -41,6 +41,11 @@ def bulk_insert(tables, offset, conn, C, snapshot, VCF, ANN, LOF, uniq, cnt):
     VCFKEY[['index', 'ena_run', 'pos', 'ref', 'alt']].to_csv(
             pipe, sep = '\t', header = False, index = False
     )
+    ##HACK
+    #pipe.seek(0)
+    #with open(str(datetime.datetime.now()), 'w') as FFF:
+    #    FFF.write(pipe.read())
+    ##
     pipe.seek(0)
     C.copy_expert(f"COPY {tables['t_key']} FROM STDIN", pipe)
     pipe.close()
@@ -97,6 +102,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", action = "store", required = True,
                     help = "input vcf tar(.gz) file")
+    parser.add_argument("-X", "--skip", action = "store",
+                    help = "the list of runids to skip")
     parser.add_argument("-s", "--snapshot", action = "store", 
                     help = "snapshot label")
     parser.add_argument("-H", "--server", action = "store",
@@ -136,6 +143,7 @@ if __name__ == '__main__':
     
     assert os.path.exists(args.input), "File not found error: {0}".format(args.input)
     extract_ena_run = lambda x: x.split('/')[-1].split('.')[0]
+    _skp = skip(args.skip)
     not_indel = lambda x: x != 'INDEL'
     mysplitrec = lambda x: x.split(';')
     info = lambda x: filter(not_indel, mysplitrec(x))
@@ -228,7 +236,11 @@ if __name__ == '__main__':
             #print ("{0} STRANGE file name {1} skipped".format(now, ti.name), flush=True)
             continue
 
-        runid = the_map.get_id( extract_ena_run(ti.name) )
+        enarun=extract_ena_run(ti.name)
+        if enarun in _skp:
+            print ("{0} SKIPPING {1}".format(now, ti.name))
+            continue
+        runid = the_map.get_id(enarun)
         if runid in uniq_before:
             print ("{0} DUPLICATE file name {1} -> ena_run {2} is not new".format(now, ti.name, runid), flush=True)
             continue

@@ -5,7 +5,7 @@ import tarfile
 import pandas
 import psycopg2
 import datetime
-from common import Map, uniq
+from common import Map, uniq, skip
 
 def bulk_insert(tables, conn, C, snapshot, COV, uniq, cnt):
     pipe = io.StringIO()
@@ -42,6 +42,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", action = "store",
                     help = "input coverage tar(.gz) file")
+    parser.add_argument("-X", "--skip", action = "store",
+                    help = "the list of runids to skip")
     parser.add_argument("-s", "--snapshot", action = "store",
                     help = "snapshot label")
     parser.add_argument("-H", "--server", action = "store",
@@ -73,6 +75,7 @@ if __name__ == '__main__':
     assert os.path.exists(args.input), "File not found error: {0}".format(args.input)
     extract_ena_run = lambda x: x.split('/')[-1].split('.')[0]
 
+    _skp = skip(args.skip)
 
     tables = {
         't_runid': "{}.{}".format(args.schema, args.runid_table_name),
@@ -124,7 +127,11 @@ if __name__ == '__main__':
             #print ("{0} STRANGE file name {1} skipped".format(now, ti.name))
             continue
 
-        runid = the_map.get_id( extract_ena_run(ti.name) )
+        enarun=extract_ena_run(ti.name)
+        if enarun in _skp:
+            print ("{0} SKIPPING {1}".format(now, ti.name))
+            continue
+        runid = the_map.get_id(enarun)
         if runid in uniq_before:
             print ("{0} DUPLICATE file name {1} -> ena_run {2} is not new".format(now, ti.name, runid))
             continue
